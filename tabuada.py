@@ -10,7 +10,7 @@ def main():
     kwargs = {}
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("select_table", help="Insira o número da tabuada que deseja")
+    parser.add_argument("select_table", help="Insert the wished number")
     args = parser.parse_args()
     
     kwargs = vars(args)
