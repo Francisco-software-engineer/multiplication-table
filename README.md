@@ -1,6 +1,6 @@
 # Multiplication-table
 
-## Multiplication-table: print multiplication table from selected table
+## Multiplication-table: print multiplication table from a given number
 
 Print the multiplication-table from a given number
 
