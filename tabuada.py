@@ -6,6 +6,10 @@ def print_table(select_table):
         produto = math.prod([tab, int(select_table)])        
         print(f"{tab} X {select_table}  =", produto)
 
+def sanitize(argument):
+    #TODO OWASP requirements
+    return argument        
+
 def main():
     kwargs = {}
     parser = argparse.ArgumentParser()
