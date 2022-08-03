@@ -1,14 +1,19 @@
 import argparse
 import math
+import re
 
 def print_table(select_table):
     for tab in range(1, 11):
-        produto = math.prod([tab, int(select_table)])        
-        print(f"{tab} X {select_table}  =", produto)
+        multiple = math.prod([tab, int(select_table)])        
+        print(f"{tab} X {select_table}  =", multiple)
 
-def sanitize(argument):
-    #TODO OWASP requirements
-    return argument        
+def log():
+    print("Err: Insert a single number between 0 and 999")        
+
+def sanitize(select_table):
+    #Accept only positive integers in range (0 to 999)
+    regExPattern = re.compile("^[1-9]?[0-9]?[0-9]$")
+    return re.match(regExPattern, select_table) 
 
 def main():
     kwargs = {}
@@ -19,7 +24,10 @@ def main():
     
     kwargs = vars(args)
 
-    print_table(**kwargs)
+    if sanitize(**kwargs) :
+        print_table(**kwargs)
+    else:
+        log()        
 
 
 if __name__ == '__main__':
